@@ -1,0 +1,5 @@
+{
+  "name": "Instant Hinglish → English Translator",
+  "description": "A Chrome Extension that translates Hinglish text to English with Casual and Professional tones using Gemini AI.",
+  "requestFramePermissions": []
+}
