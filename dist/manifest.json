@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Hinglish AI Translator",
+  "version": "1.0",
+  "description": "Translate Hinglish to English using Gemini AI",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open Hinglish Translator"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-loader.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js", "assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
